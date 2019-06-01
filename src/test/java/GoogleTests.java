@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GoogleTests {
@@ -16,14 +18,14 @@ public class GoogleTests {
     private WebDriverWait wait;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         driver = BrowserManager.initializeBrowser(driver, "Chrome");
         driver.get("https://www.google.com");
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 15);
     }
 
     @Test
-    public void googleSearchExistingSite() {
+    void googleSearchExistingSite() {
         WebElement webElement = driver.findElement(By.name("q"));
         webElement.sendKeys("YouTube");
         webElement.sendKeys(Keys.ENTER);
@@ -35,8 +37,19 @@ public class GoogleTests {
         assertEquals("YouTube", driver.getTitle());
     }
 
+    @Test
+    void googleSearchNonExistingSite() {
+        WebElement webElement = driver.findElement(By.name("q"));
+        webElement.sendKeys("dsafhjgsfjhndfjmasfrhSdnmdfash");
+        webElement.sendKeys(Keys.ENTER);
+
+        WebElement element = driver.findElement(By.id("topstuff"));
+        boolean result = element.getText().contains("Podana fraza - dsafhjgsfjhndfjmasfrhSdnmdfash - nie została odnaleziona.");
+        assertTrue(result);
+    }
+
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         driver.quit();
     }
 }
