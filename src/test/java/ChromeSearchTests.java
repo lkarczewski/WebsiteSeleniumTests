@@ -42,6 +42,7 @@ public class ChromeSearchTests {
         webElement.sendKeys("dsafhjgsfjhndfjmasfrhSdnmdfash");
         webElement.sendKeys(Keys.ENTER);
 
+        wait.until(ExpectedConditions.titleContains("dsafhjgsfjhndfjmasfrhSdnmdfash"));
         WebElement element = driver.findElement(By.id("topstuff"));
         boolean result = element.getText().contains("Podana fraza - dsafhjgsfjhndfjmasfrhSdnmdfash - nie została odnaleziona.");
         assertTrue(result);

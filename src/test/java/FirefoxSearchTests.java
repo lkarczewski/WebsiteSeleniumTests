@@ -36,6 +36,18 @@ public class FirefoxSearchTests {
         assertEquals("YouTube", driver.getTitle());
     }
 
+    @Test
+    void googleSearchNonExistingSite() {
+        WebElement webElement = driver.findElement(By.name("q"));
+        webElement.sendKeys("dsafhjgsfjhndfjmasfrhSdnmdfash");
+        webElement.sendKeys(Keys.ENTER);
+
+        wait.until(ExpectedConditions.titleContains("dsafhjgsfjhndfjmasfrhSdnmdfash"));
+        WebElement element = driver.findElement(By.id("topstuff"));
+        boolean result = element.getText().contains("Podana fraza - dsafhjgsfjhndfjmasfrhSdnmdfash - nie została odnaleziona.");
+        assertTrue(result);
+    }
+
     @AfterEach
     void tearDown() {
         driver.quit();
