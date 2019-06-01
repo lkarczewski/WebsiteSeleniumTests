@@ -1,5 +1,5 @@
-# projekt2-lkarczewski
-Jest to repozytorium z użyciem GitFlow.
+# projekt3-lkarczewski
+
 ## Travis CI
 
 ## Codacy
