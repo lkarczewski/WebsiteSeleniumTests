@@ -23,6 +23,19 @@ public class FirefoxSearchTests {
         wait = new WebDriverWait(driver, 15);
     }
 
+    @Test
+    void googleSearchExistingSite() {
+        WebElement webElement = driver.findElement(By.name("q"));
+        webElement.sendKeys("YouTube");
+        webElement.sendKeys(Keys.ENTER);
+
+        wait.until(ExpectedConditions.titleContains("YouTube"));
+        driver.findElement(By.className("LC20lb")).click();
+        wait.until(ExpectedConditions.titleIs("YouTube"));
+
+        assertEquals("YouTube", driver.getTitle());
+    }
+
     @AfterEach
     void tearDown() {
         driver.quit();
