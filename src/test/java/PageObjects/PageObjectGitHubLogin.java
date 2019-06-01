@@ -20,7 +20,7 @@ public class PageObjectGitHubLogin {
         driver.findElement(By.id("login_field")).sendKeys("jakafajnanazwa");
         driver.findElement(By.id("password")).sendKeys("aleF4jneH@slo");
         driver.findElement(By.name("commit")).click();
-        wait.until(ExpectedConditions.urlMatches("https://www.github.com"));
+        wait.until(ExpectedConditions.urlMatches("https://github.com"));
     }
 
     public void loginToNonExistingAccount() {
