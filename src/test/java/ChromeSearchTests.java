@@ -24,7 +24,7 @@ public class ChromeSearchTests {
     }
 
     @Test
-    void googleSearchExistingSite() {
+    void chromeGoogleSearchExistingSite() {
         WebElement webElement = driver.findElement(By.name("q"));
         webElement.sendKeys("YouTube");
         webElement.sendKeys(Keys.ENTER);
@@ -37,7 +37,7 @@ public class ChromeSearchTests {
     }
 
     @Test
-    void googleSearchNonExistingSite() {
+    void chromeGoogleSearchNonExistingSite() {
         WebElement webElement = driver.findElement(By.name("q"));
         webElement.sendKeys("dsafhjgsfjhndfjmasfrhSdnmdfash");
         webElement.sendKeys(Keys.ENTER);
