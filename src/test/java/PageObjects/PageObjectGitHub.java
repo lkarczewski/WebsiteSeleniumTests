@@ -14,7 +14,7 @@ public class PageObjectGitHub {
         wait = new WebDriverWait(driver, 15);
     }
 
-    public boolean assertPageTitle() {
+    public boolean checkPageTitle() {
         Boolean result = driver.getTitle().contains("GitHub");
         return result;
     }
