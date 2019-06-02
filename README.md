@@ -1,6 +1,6 @@
 # projekt3-lkarczewski
 
-## Travis CI
+## Travis CI [![Build Status](https://travis-ci.com/testowanieaplikacjijavaug/projekt3-lkarczewski.svg?token=1GLazZGrwXcNFBLzNe2m&branch=master)](https://travis-ci.com/testowanieaplikacjijavaug/projekt3-lkarczewski)
 
 ## Codacy [![Codacy Badge](https://api.codacy.com/project/badge/Grade/58e515c6c619442680ea68b7fcfd8982)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=testowanieaplikacjijavaug/projekt3-lkarczewski&amp;utm_campaign=Badge_Grade)
 
