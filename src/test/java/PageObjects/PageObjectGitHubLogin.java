@@ -36,6 +36,6 @@ public class PageObjectGitHubLogin {
     }
 
     public String getErrorMessage(){
-        return driver.findElement(By.xpath("/html/body[@class='logged-out env-production page-responsive min-width-0 session-authentication']/div[@class='application-main ']/div[@id='js-pjax-container']/div[@id='login']/form/div[@id='js-flash-container']/div[@class='flash flash-full flash-error']/div[@class='container']")).getText();
+        return driver.findElement(By.className("container")).getText();
     }
 }
