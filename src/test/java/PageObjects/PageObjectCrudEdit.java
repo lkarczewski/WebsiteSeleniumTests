@@ -31,4 +31,9 @@ public class PageObjectCrudEdit {
         driver.findElement(By.id("post_title")).clear();
         driver.findElement(By.name("commit")).click();
     }
+
+    public String getResult() {
+        String result = driver.findElement(By.className("container")).getText();
+        return result;
+    }
 }
