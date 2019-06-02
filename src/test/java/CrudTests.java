@@ -51,6 +51,14 @@ public class CrudTests {
         assertThat(result).contains("Udało się");
     }
 
+    @Test
+    void crudEditIncorrectPostTest() throws InterruptedException {
+        pageObjectCrudEdit = new PageObjectCrudEdit(driver);
+        pageObjectCrudEdit.editPostIncorrect();
+        String result = pageObjectCrudEdit.getResult();
+        assertThat(result).contains("Wystąpiły błędy");
+    }
+
     @AfterEach
     void tearDown() {
         driver.quit();
