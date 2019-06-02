@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class GitHubLoginTests {
+public class LoginTests {
 
     private WebDriver driver;
     private PageObjectGitHub pageObjectGitHub;
@@ -36,7 +36,8 @@ public class GitHubLoginTests {
     void gitHubIncorrectLoginTest() {
         pageObjectGitHubLogin = new PageObjectGitHubLogin(driver);
         pageObjectGitHubLogin.loginToNonExistingAccount();
-        assertThat(pageObjectGitHubLogin.getErrorMessage().contains("Incorrect username of password"));
+        String result = pageObjectGitHubLogin.getErrorMessage();
+        assertThat(result.contains("Incorrect username of password"));
     }
 
     @AfterEach
