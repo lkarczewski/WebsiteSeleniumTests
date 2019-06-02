@@ -1,5 +1,6 @@
 import PageObjects.PageObjectCrud;
 import PageObjects.PageObjectCrudAdd;
+import PageObjects.PageObjectCrudDelete;
 import PageObjects.PageObjectCrudEdit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +16,7 @@ public class CrudTests {
     private PageObjectCrud pageObjectCrud;
     private PageObjectCrudAdd pageObjectCrudAdd;
     private PageObjectCrudEdit pageObjectCrudEdit;
+    private PageObjectCrudDelete pageObjectCrudDelete;
 
     @BeforeEach
     void setUp() {
@@ -57,6 +59,22 @@ public class CrudTests {
         pageObjectCrudEdit.editPostIncorrect();
         String result = pageObjectCrudEdit.getResult();
         assertThat(result).contains("Wystąpiły błędy");
+    }
+
+    @Test
+    void deletePostTest() throws InterruptedException {
+        pageObjectCrudDelete = new PageObjectCrudDelete(driver);
+        pageObjectCrudDelete.deletePost();
+        String result = pageObjectCrudDelete.getResult();
+        assertThat(result).contains("Pomyślnie usunięto");
+    }
+
+    @Test
+    void doNotDeletePostTest() throws InterruptedException {
+        pageObjectCrudDelete = new PageObjectCrudDelete(driver);
+        pageObjectCrudDelete.doNotDeletePost();
+        String result = pageObjectCrudDelete.getResult();
+        assertThat(result).contains("Nowy post testowy");
     }
 
     @AfterEach

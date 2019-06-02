@@ -20,7 +20,8 @@ public class PageObjectCrudEdit {
         WebElement element = driver.findElement(By.xpath("//tr[td[2]//text()[contains(., 'Post testowy')]]/td[6]//a[@class='btn btn-primary btn-xs']"));
         element.click();
         Thread.sleep(3000);
-        driver.findElement(By.id("post_title")).sendKeys("Nowy tytuł testowy");
+        driver.findElement(By.id("post_title")).clear();
+        driver.findElement(By.id("post_title")).sendKeys("Nowy post testowy");
         driver.findElement(By.name("commit")).click();
     }
 
