@@ -2,7 +2,7 @@
 
 ## Travis CI
 
-## Codacy
+## Codacy [![Codacy Badge](https://api.codacy.com/project/badge/Grade/58e515c6c619442680ea68b7fcfd8982)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=testowanieaplikacjijavaug/projekt3-lkarczewski&amp;utm_campaign=Badge_Grade)
 
 ### Projekt 1 (25 pkt)
 
