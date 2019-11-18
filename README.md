@@ -1,4 +1,4 @@
-# projekt3-lkarczewski
+# Website tests using Selenium WebDriver
 
 ## Travis CI [![Build Status](https://travis-ci.com/testowanieaplikacjijavaug/projekt3-lkarczewski.svg?token=1GLazZGrwXcNFBLzNe2m&branch=master)](https://travis-ci.com/testowanieaplikacjijavaug/projekt3-lkarczewski)
 
